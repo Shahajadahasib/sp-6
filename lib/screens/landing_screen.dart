@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sp6/screens/product_item.dart';
-
+import 'package:foodapp/screens/product_page.dart';
 import 'package:sp6/utils/constants.dart';
 import 'package:sp6/utils/widget_functions.dart';
 
@@ -185,7 +185,13 @@ class _LandingScreenState extends State<LandingScreen> {
                                       .map((data) => InkWell(
                                             onTap: () {
                                               _focusNode.unfocus();
-                                              ////////////////
+                                             Navigator.of(context).push(
+                                                                                             MaterialPageRoute(
+                                                                                               builder: (context) =>
+                                                                                                   ProductPage(
+                                                                                                       productData: data),
+                                                                                             ),
+                                                                                           );
                                             },
                                             child: ProductItem(
                                                 productData: data,
